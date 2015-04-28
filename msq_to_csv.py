@@ -1,12 +1,12 @@
 import csv
 
 inputFileName = input('Enter MSQ filename: ')
+numGradeFields = input('Enter the number of grade fields: ')
 outputFileName = input('Enter output CSV filename: ')
 
 msqFile = open(inputFileName)
 outFile = open(outputFileName, 'wb')
 
-numGradeFields = 8
 if numGradeFields > 0:
     parcel_title = []
 for i in range(numGradeFields):

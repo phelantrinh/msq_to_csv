@@ -73,7 +73,7 @@ else:
             print parcelTonnes
             cumTonnes += parcelTonnes           
             
-            # Concatnate header infomation with parcel information
+            # Concatnate header infomation with parcel information 
             concRow = [period, fraction, pushback, rockType, parcelTonnes] \
                         + elementQtys + [process] 
 

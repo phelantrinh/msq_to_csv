@@ -74,14 +74,18 @@ else:
             cumTonnes += parcelTonnes           
             
             # Concatnate header infomation with parcel information
-            concRow = [period, fraction, pushback, rockType, parcelTonnes] + elementQtys + [process] 
+            concRow = [period, fraction, pushback, rockType, parcelTonnes] \
+                        + elementQtys + [process] 
 
             writer.writerow(concRow)
             parcelCount += 1
 
             if parcelCount == parcels and cumTonnes < headerTonnes:
                 missingTonnes = headerTonnes - cumTonnes
-                unclass_row = [period, fraction, pushback, 'UNK', missingTonnes] + [0.0 for i in range(numGradeFields)] + ['-np-']
+                unclass_row = [period, fraction, pushback, 'UNK', 
+                                missingTonnes] \
+                                + [0.0 for i in range(numGradeFields)] \
+                                + ['-np-']
                 writer.writerow(unclass_row)
         else:
             print('WARNING - NOT HEADER OR PARCEL ROW: ')
